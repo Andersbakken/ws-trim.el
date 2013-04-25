@@ -301,9 +301,9 @@ See the variable docstring for details about this mode."
 	  (progn
 	    (error "`ws-trim-level' must be an integer")
 	    (setq ws-trim-mode nil))
-	(add-hook 'after-change-functions 'ws-trim-after-change nil t)
-	(add-hook 'post-command-hook 'ws-trim-post-command nil t)
-	(add-hook 'first-change-hook 'ws-trim-on-first-change nil t)
+        (add-hook 'after-change-functions 'ws-trim-after-change)
+        (add-hook 'post-command-hook 'ws-trim-post-command)
+        (add-hook 'first-change-hook 'ws-trim-on-first-change)
 	(add-hook 'write-contents-hooks 'ws-trim-on-write)
 	(run-hooks 'ws-trim-mode-hook)
 	(if (or (>= ws-trim-level 3)
