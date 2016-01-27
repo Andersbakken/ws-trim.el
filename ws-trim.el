@@ -381,7 +381,7 @@ See the variable docstring for details about this mode."
                                (cdr ws-trim-changed-region)))))))
 
 (defun ws-trim-post-command ()
-  (if (consp ws-trim-changed-region)
+  (if (and (not buffer-read-only) (consp ws-trim-changed-region))
       (let* ((begmark (car ws-trim-changed-region))
              (endmark (cdr ws-trim-changed-region))
              (beg (marker-position begmark))
